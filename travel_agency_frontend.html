@@ -59,7 +59,6 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
 .msg{padding:14px 16px;border-radius:10px;font-size:14px;margin-top:16px;display:none;}
 .msg.success{background:#0d2818;border:1px solid #16a34a;color:#4ade80;display:block;}
 .msg.error{background:#2d0a0a;border:1px solid #dc2626;color:#f87171;display:block;}
-.msg.info{background:#0c1a2e;border:1px solid #1d4ed8;color:#93c5fd;display:block;}
 .booking-card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:24px;margin-bottom:16px;}
 .booking-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .booking-id{font-size:13px;color:#8b949e;}
@@ -83,8 +82,6 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
 .loading{text-align:center;padding:40px;color:#484f58;font-size:14px;}
 .section-title{font-size:22px;font-weight:700;color:#e6edf3;margin-bottom:20px;}
 .section-sub{font-size:14px;color:#8b949e;margin-bottom:24px;}
-
-/* ── AI RECOMMEND PAGE ── */
 .ai-hero{background:linear-gradient(135deg,#1a1f2e,#0d1117);padding:60px 40px;text-align:center;border-bottom:1px solid #30363d;}
 .ai-hero h2{font-size:36px;font-weight:800;color:#e6edf3;margin-bottom:12px;}
 .ai-hero p{font-size:16px;color:#8b949e;max-width:500px;margin:0 auto 32px;}
@@ -92,16 +89,14 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
 .pref-bar input{flex:1;background:transparent;border:none;outline:none;color:#e6edf3;font-size:15px;padding:8px 12px;}
 .pref-bar input::placeholder{color:#484f58;}
 .pref-bar button{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;}
-.quick-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;max-width:700px;margin:16px auto 0;}
+.quick-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px auto 0;max-width:700px;}
 .tag{padding:8px 16px;background:#21262d;border:1px solid #30363d;border-radius:20px;font-size:13px;color:#8b949e;cursor:pointer;transition:all 0.2s;}
 .tag:hover{border-color:#6366f1;color:#a78bfa;}
 .ai-explanation{background:#0f1923;border:1px solid #1d4ed8;border-radius:16px;padding:24px;margin-bottom:28px;}
-.ai-explanation h3{color:#93c5fd;font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.ai-explanation h3{color:#93c5fd;font-size:15px;font-weight:700;margin-bottom:10px;}
 .ai-explanation p{color:#c7d8f0;font-size:15px;line-height:1.7;}
 .rec-trip-card{background:#161b22;border:2px solid #6366f1;border-radius:16px;overflow:hidden;transition:all 0.2s;position:relative;}
 .rec-trip-card::before{content:'AI Pick';position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;z-index:1;}
-
-/* ── FLOATING CHAT ── */
 .chat-bubble{position:fixed;bottom:28px;right:28px;z-index:999;}
 .chat-toggle{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;cursor:pointer;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(99,102,241,0.5);transition:transform 0.2s;}
 .chat-toggle:hover{transform:scale(1.1);}
@@ -143,7 +138,6 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
   </div>
 </nav>
 
-<!-- BROWSE PAGE -->
 <div id="page-browse" class="page active">
   <div class="hero">
     <h1>Explore the World</h1>
@@ -161,13 +155,12 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
     </div>
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
       <div><div class="section-title" style="margin-bottom:4px;">Available Trips</div><div class="section-sub" id="trips-count" style="margin-bottom:0;"></div></div>
-      <button class="btn btn-primary" onclick="switchTab('recommend', document.querySelectorAll('.nav-tab')[1])">🤖 Not sure? Get AI Recommendation</button>
+      <button class="btn btn-primary" onclick="switchTab('recommend',document.querySelectorAll('.nav-tab')[1])">🤖 Not sure? Get AI Recommendation</button>
     </div>
     <div class="trips-grid" id="trips-grid"><div class="loading">Loading trips...</div></div>
   </div>
 </div>
 
-<!-- AI RECOMMEND PAGE -->
 <div id="page-recommend" class="page">
   <div class="ai-hero">
     <h2>🤖 AI Trip Planner</h2>
@@ -179,18 +172,16 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
     <div class="quick-tags">
       <div class="tag" onclick="quickRec('relaxing beach holiday under $1000')">🏖️ Beach under $1000</div>
       <div class="tag" onclick="quickRec('romantic couple getaway, luxury experience')">💑 Romantic getaway</div>
-      <div class="tag" onclick="quickRec('cultural city trip, history food and art')">🏛️ Culture & food</div>
+      <div class="tag" onclick="quickRec('cultural city trip, history food and art')">🏛️ Culture and food</div>
       <div class="tag" onclick="quickRec('adventure and exploration, exciting destination')">🗺️ Adventure</div>
       <div class="tag" onclick="quickRec('budget trip under $900, fun and relaxing')">💰 Budget friendly</div>
     </div>
   </div>
-
   <div class="container">
     <div id="rec-loading" style="display:none;" class="loading">🤖 AI is finding the best trips for you...</div>
-    <div id="rec-error" class="msg error" style="max-width:700px;margin:0 auto;"></div>
-
+    <div id="rec-error" class="msg" style="max-width:700px;margin:0 auto;"></div>
     <div id="rec-results" style="display:none;">
-      <div class="ai-explanation" id="rec-explanation">
+      <div class="ai-explanation">
         <h3>🤖 AI Recommendation</h3>
         <p id="rec-text"></p>
       </div>
@@ -200,15 +191,9 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
         <button class="btn" style="background:#21262d;border:1px solid #30363d;color:#8b949e;" onclick="clearRec()">🔄 Try Different Preferences</button>
       </div>
     </div>
-
-    <div id="rec-empty" style="display:none;text-align:center;padding:60px 20px;">
-      <div style="font-size:48px;margin-bottom:16px;">🤔</div>
-      <p style="color:#8b949e;font-size:16px;">No matching trips found. Try different preferences or <a href="#" onclick="switchTab('browse',document.querySelectorAll('.nav-tab')[0]);return false;" style="color:#6366f1;">browse all trips</a>.</p>
-    </div>
   </div>
 </div>
 
-<!-- BOOK PAGE -->
 <div id="page-book" class="page">
   <div class="container">
     <div class="form-card">
@@ -236,7 +221,6 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
   </div>
 </div>
 
-<!-- MY BOOKINGS PAGE -->
 <div id="page-mybookings" class="page">
   <div class="container">
     <div class="form-card" style="margin-bottom:28px;">
@@ -249,9 +233,8 @@ nav{background:#161b22;border-bottom:1px solid #30363d;padding:0 40px;display:fl
   </div>
 </div>
 
-<!-- FLOATING CHAT -->
 <div class="chat-bubble">
-  <button class="chat-toggle" onclick="toggleChat()" title="Chat with AI assistant">💬</button>
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
 </div>
 
 <div class="chat-window" id="chat-window">
@@ -296,39 +279,37 @@ function tripEmoji(title) {
   return {emoji:'✈️',cls:'default'};
 }
 
-function tripCardHTML(t, isRec=false) {
+function tripCardHTML(t, isRec) {
   const dest = tripsMap[t.destination_id] || {};
-  const {emoji,cls} = tripEmoji(t.title);
+  const e = tripEmoji(t.title);
   const available = t.total_seats - t.booked_seats;
-  return `<div class="${isRec ? 'rec-trip-card trip-card' : 'trip-card'}">
-    <div class="trip-img ${cls}">${emoji}<div class="trip-badge">${available} seats left</div></div>
-    <div class="trip-body">
-      <div class="trip-title">${t.title}</div>
-      <div class="trip-meta">
-        <span>📍 ${dest.city||'Unknown'}, ${dest.country||''}</span>
-        <span>📅 ${t.start_date.split('T')[0]} → ${t.end_date.split('T')[0]}</span>
-        <span>💺 ${available} of ${t.total_seats} seats available</span>
-      </div>
-      <div class="trip-footer">
-        <div class="trip-price">$${t.price_per_person}<span>/person</span></div>
-        <button class="btn ${isRec ? 'btn-green' : 'btn-primary'}" onclick="goBook('${t.id}')">
-          ${isRec ? '✅ Book This Trip' : 'Book Now'}
-        </button>
-      </div>
-    </div>
-  </div>`;
+  return '<div class="' + (isRec ? 'rec-trip-card trip-card' : 'trip-card') + '">' +
+    '<div class="trip-img ' + e.cls + '">' + e.emoji + '<div class="trip-badge">' + available + ' seats left</div></div>' +
+    '<div class="trip-body">' +
+    '<div class="trip-title">' + t.title + '</div>' +
+    '<div class="trip-meta">' +
+    '<span>📍 ' + (dest.city || 'Unknown') + ', ' + (dest.country || '') + '</span>' +
+    '<span>📅 ' + t.start_date.split('T')[0] + ' → ' + t.end_date.split('T')[0] + '</span>' +
+    '<span>💺 ' + available + ' of ' + t.total_seats + ' seats available</span>' +
+    '</div>' +
+    '<div class="trip-footer">' +
+    '<div class="trip-price">$' + t.price_per_person + '<span>/person</span></div>' +
+    '<button class="btn ' + (isRec ? 'btn-green' : 'btn-primary') + '" onclick="goBook(\'' + t.id + '\')">' +
+    (isRec ? '✅ Book This Trip' : 'Book Now') +
+    '</button></div></div></div>';
 }
 
 async function loadTrips() {
   try {
-    const [tripsRes, destsRes] = await Promise.all([fetch(`${API}/trips/`), fetch(`${API}/destinations/`)]);
-    allTrips = await tripsRes.json();
-    const dests = await destsRes.json();
-    dests.forEach(d => tripsMap[d.id] = d);
+    const r1 = await fetch(API + '/trips/');
+    const r2 = await fetch(API + '/destinations/');
+    allTrips = await r1.json();
+    const dests = await r2.json();
+    dests.forEach(function(d) { tripsMap[d.id] = d; });
     document.getElementById('stat-trips').textContent = allTrips.length;
     document.getElementById('stat-dest').textContent = dests.length;
-    const minPrice = allTrips.length ? Math.min(...allTrips.map(t => t.price_per_person)) : 0;
-    document.getElementById('stat-price').textContent = minPrice ? `$${minPrice}` : '—';
+    const minPrice = allTrips.length ? Math.min.apply(null, allTrips.map(function(t) { return t.price_per_person; })) : 0;
+    document.getElementById('stat-price').textContent = minPrice ? '$' + minPrice : '—';
     renderTrips(allTrips);
     populateTripSelect(allTrips);
   } catch(e) {
@@ -338,23 +319,25 @@ async function loadTrips() {
 
 function renderTrips(trips) {
   const grid = document.getElementById('trips-grid');
-  document.getElementById('trips-count').textContent = `${trips.length} trip${trips.length!==1?'s':''} found`;
+  document.getElementById('trips-count').textContent = trips.length + ' trip' + (trips.length !== 1 ? 's' : '') + ' found';
   if (!trips.length) { grid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><p>No trips match your search.</p></div>'; return; }
-  grid.innerHTML = trips.map(t => tripCardHTML(t, false)).join('');
+  grid.innerHTML = trips.map(function(t) { return tripCardHTML(t, false); }).join('');
 }
 
 function filterTrips() {
   const q = document.getElementById('search-input').value.toLowerCase();
-  const filtered = allTrips.filter(t => {
+  const filtered = allTrips.filter(function(t) {
     const dest = tripsMap[t.destination_id] || {};
-    return t.title.toLowerCase().includes(q)||(dest.city||'').toLowerCase().includes(q)||(dest.country||'').toLowerCase().includes(q);
+    return t.title.toLowerCase().includes(q) || (dest.city || '').toLowerCase().includes(q) || (dest.country || '').toLowerCase().includes(q);
   });
   renderTrips(filtered);
 }
 
 function populateTripSelect(trips) {
   const sel = document.getElementById('b-trip');
-  sel.innerHTML = '<option value="">-- Choose a trip --</option>' + trips.map(t => `<option value="${t.id}" data-price="${t.price_per_person}">${t.title} — $${t.price_per_person}/person</option>`).join('');
+  sel.innerHTML = '<option value="">-- Choose a trip --</option>' + trips.map(function(t) {
+    return '<option value="' + t.id + '" data-price="' + t.price_per_person + '">' + t.title + ' — $' + t.price_per_person + '/person</option>';
+  }).join('');
   sel.onchange = updatePricePreview;
   document.getElementById('b-travelers').oninput = updatePricePreview;
 }
@@ -362,27 +345,29 @@ function populateTripSelect(trips) {
 function updatePricePreview() {
   const sel = document.getElementById('b-trip');
   const opt = sel.options[sel.selectedIndex];
-  const travelers = parseInt(document.getElementById('b-travelers').value)||1;
-  const preview = document.getElementById('price-preview');
+  const travelers = parseInt(document.getElementById('b-travelers').value) || 1;
   if (opt && opt.dataset.price) {
-    document.getElementById('price-preview-val').textContent = `$${(parseFloat(opt.dataset.price)*travelers).toLocaleString()}`;
-    preview.style.display='block';
-    const trip = allTrips.find(t => t.id === sel.value);
+    document.getElementById('price-preview-val').textContent = '$' + (parseFloat(opt.dataset.price) * travelers).toLocaleString();
+    document.getElementById('price-preview').style.display = 'block';
+    const trip = allTrips.find(function(t) { return t.id === sel.value; });
     if (trip) {
       document.getElementById('selected-trip-name').textContent = trip.title;
-      document.getElementById('selected-trip-price').textContent = `$${trip.price_per_person}/person`;
-      document.getElementById('selected-trip-preview').style.display='block';
+      document.getElementById('selected-trip-price').textContent = '$' + trip.price_per_person + '/person';
+      document.getElementById('selected-trip-preview').style.display = 'block';
     }
-  } else { preview.style.display='none'; document.getElementById('selected-trip-preview').style.display='none'; }
+  } else {
+    document.getElementById('price-preview').style.display = 'none';
+    document.getElementById('selected-trip-preview').style.display = 'none';
+  }
 }
 
 function goBook(tripId) {
   if (!allTrips.length) loadTrips();
   switchTab('book', document.querySelectorAll('.nav-tab')[2]);
-  setTimeout(() => {
+  setTimeout(function() {
     document.getElementById('b-trip').value = tripId;
     updatePricePreview();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, 100);
 }
 
@@ -392,127 +377,113 @@ async function bookTrip() {
   const tripId = document.getElementById('b-trip').value;
   const travelers = parseInt(document.getElementById('b-travelers').value);
   const msg = document.getElementById('book-msg');
-  if (!name||!email||!tripId||!travelers) { showMsg(msg,'Please fill in all fields.','error'); return; }
+  if (!name || !email || !tripId || !travelers) { showMsg(msg, 'Please fill in all fields.', 'error'); return; }
   try {
-    let userRes = await fetch(`${API}/users/`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email})});
+    let userRes = await fetch(API + '/users/', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name:name, email:email})});
     let user;
-    if (userRes.status===400) { const all=await fetch(`${API}/users/`).then(r=>r.json()); user=all.find(u=>u.email===email); }
-    else { user=await userRes.json(); }
-    if (!user) { showMsg(msg,'Could not create account.','error'); return; }
-    const bookRes = await fetch(`${API}/bookings/`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user_id:user.id,trip_id:tripId,num_travelers:travelers})});
+    if (userRes.status === 400) {
+      const all = await fetch(API + '/users/').then(function(r) { return r.json(); });
+      user = all.find(function(u) { return u.email === email; });
+    } else { user = await userRes.json(); }
+    if (!user) { showMsg(msg, 'Could not create account.', 'error'); return; }
+    const bookRes = await fetch(API + '/bookings/', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({user_id:user.id, trip_id:tripId, num_travelers:travelers})});
     const booking = await bookRes.json();
-    if (!bookRes.ok) { showMsg(msg,booking.detail||'Booking failed.','error'); return; }
-    showMsg(msg,`Booking confirmed! Total: $${booking.total_price.toLocaleString()}. Booking ID: ${booking.id}`,'success');
-    document.getElementById('b-name').value=''; document.getElementById('b-email').value='';
-    document.getElementById('b-trip').value=''; document.getElementById('price-preview').style.display='none';
-    document.getElementById('selected-trip-preview').style.display='none';
-  } catch(e) { showMsg(msg,'Network error. Please try again.','error'); }
+    if (!bookRes.ok) { showMsg(msg, booking.detail || 'Booking failed.', 'error'); return; }
+    showMsg(msg, 'Booking confirmed! Total: $' + booking.total_price.toLocaleString() + '. Booking ID: ' + booking.id, 'success');
+    document.getElementById('b-name').value = '';
+    document.getElementById('b-email').value = '';
+    document.getElementById('b-trip').value = '';
+    document.getElementById('price-preview').style.display = 'none';
+    document.getElementById('selected-trip-preview').style.display = 'none';
+  } catch(e) { showMsg(msg, 'Network error. Please try again.', 'error'); }
 }
 
 async function lookupBookings() {
   const email = document.getElementById('lookup-email').value.trim();
   const msg = document.getElementById('lookup-msg');
   const list = document.getElementById('bookings-list');
-  if (!email) { showMsg(msg,'Please enter your email.','error'); return; }
-  msg.className='msg'; list.innerHTML='<div class="loading">Looking up bookings...</div>';
+  if (!email) { showMsg(msg, 'Please enter your email.', 'error'); return; }
+  msg.className = 'msg';
+  list.innerHTML = '<div class="loading">Looking up bookings...</div>';
   try {
-    const all = await fetch(`${API}/users/`).then(r=>r.json());
-    const user = all.find(u=>u.email===email);
-    if (!user) { showMsg(msg,'No account found with that email.','error'); list.innerHTML=''; return; }
-    const bookings = await fetch(`${API}/bookings/user/${user.id}`).then(r=>r.json());
-    if (!bookings.length) { list.innerHTML='<div class="empty-state"><div class="empty-icon">📭</div><p>No bookings found.</p></div>'; return; }
-    list.innerHTML = bookings.map(b=>`
-      <div class="booking-card" id="bc-${b.id}">
-        <div class="booking-header">
-          <div class="booking-id">Booking ID: ${b.id.slice(0,16)}...</div>
-          <div class="status-badge ${b.status==='confirmed'?'status-confirmed':'status-cancelled'}">${b.status.toUpperCase()}</div>
-        </div>
-        <div class="booking-detail">
-          <div class="detail-item"><label>Travelers</label><span>${b.num_travelers}</span></div>
-          <div class="detail-item"><label>Total Paid</label><span>$${b.total_price.toLocaleString()}</span></div>
-          <div class="detail-item"><label>Booked On</label><span>${b.booked_at.split('T')[0]}</span></div>
-        </div>
-        ${b.status==='confirmed'?`<button class="btn btn-danger" onclick="cancelBooking('${b.id}',this)">Cancel Booking</button>`:`<p style="font-size:13px;color:#484f58;">Cancelled on ${b.cancelled_at?b.cancelled_at.split('T')[0]:'—'}</p>`}
-        <div id="cancel-result-${b.id}"></div>
-      </div>`).join('');
-  } catch(e) { showMsg(msg,'Network error.','error'); list.innerHTML=''; }
+    const all = await fetch(API + '/users/').then(function(r) { return r.json(); });
+    const user = all.find(function(u) { return u.email === email; });
+    if (!user) { showMsg(msg, 'No account found with that email.', 'error'); list.innerHTML = ''; return; }
+    const bookings = await fetch(API + '/bookings/user/' + user.id).then(function(r) { return r.json(); });
+    if (!bookings.length) { list.innerHTML = '<div class="empty-state"><div class="empty-icon">📭</div><p>No bookings found.</p></div>'; return; }
+    list.innerHTML = bookings.map(function(b) {
+      return '<div class="booking-card" id="bc-' + b.id + '">' +
+        '<div class="booking-header"><div class="booking-id">Booking ID: ' + b.id.slice(0,16) + '...</div>' +
+        '<div class="status-badge ' + (b.status === 'confirmed' ? 'status-confirmed' : 'status-cancelled') + '">' + b.status.toUpperCase() + '</div></div>' +
+        '<div class="booking-detail">' +
+        '<div class="detail-item"><label>Travelers</label><span>' + b.num_travelers + '</span></div>' +
+        '<div class="detail-item"><label>Total Paid</label><span>$' + b.total_price.toLocaleString() + '</span></div>' +
+        '<div class="detail-item"><label>Booked On</label><span>' + b.booked_at.split('T')[0] + '</span></div>' +
+        '</div>' +
+        (b.status === 'confirmed' ? '<button class="btn btn-danger" onclick="cancelBooking(\'' + b.id + '\',this)">Cancel Booking</button>' : '<p style="font-size:13px;color:#484f58;">Cancelled on ' + (b.cancelled_at ? b.cancelled_at.split('T')[0] : '—') + '</p>') +
+        '<div id="cancel-result-' + b.id + '"></div></div>';
+    }).join('');
+  } catch(e) { showMsg(msg, 'Network error.', 'error'); list.innerHTML = ''; }
 }
 
 async function cancelBooking(id, btn) {
-  btn.disabled=true; btn.textContent='Cancelling...';
+  btn.disabled = true; btn.textContent = 'Cancelling...';
   try {
-    const res = await fetch(`${API}/bookings/${id}/cancel`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({})});
+    const res = await fetch(API + '/bookings/' + id + '/cancel', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({})});
     const data = await res.json();
-    if (!res.ok) { btn.disabled=false; btn.textContent='Cancel Booking'; return; }
-    btn.style.display='none';
-    document.getElementById(`cancel-result-${id}`).innerHTML=`
-      <div class="refund-result"><h4>Cancellation Confirmed</h4>
-        <div class="refund-grid">
-          <div class="refund-item"><label>Refund Amount</label><span>$${data.refund_amount.toLocaleString()}</span></div>
-          <div class="refund-item"><label>Refund %</label><span>${(data.refund_percentage*100).toFixed(0)}%</span></div>
-          <div class="refund-item"><label>Days Before Trip</label><span>${data.days_before_trip}</span></div>
-        </div>
-      </div>`;
-    document.querySelector(`#bc-${id} .status-badge`).className='status-badge status-cancelled';
-    document.querySelector(`#bc-${id} .status-badge`).textContent='CANCELLED';
-  } catch(e) { btn.disabled=false; btn.textContent='Cancel Booking'; }
+    if (!res.ok) { btn.disabled = false; btn.textContent = 'Cancel Booking'; return; }
+    btn.style.display = 'none';
+    document.getElementById('cancel-result-' + id).innerHTML =
+      '<div class="refund-result"><h4>Cancellation Confirmed</h4>' +
+      '<div class="refund-grid">' +
+      '<div class="refund-item"><label>Refund Amount</label><span>$' + data.refund_amount.toLocaleString() + '</span></div>' +
+      '<div class="refund-item"><label>Refund %</label><span>' + (data.refund_percentage * 100).toFixed(0) + '%</span></div>' +
+      '<div class="refund-item"><label>Days Before Trip</label><span>' + data.days_before_trip + '</span></div>' +
+      '</div></div>';
+    document.querySelector('#bc-' + id + ' .status-badge').className = 'status-badge status-cancelled';
+    document.querySelector('#bc-' + id + ' .status-badge').textContent = 'CANCELLED';
+  } catch(e) { btn.disabled = false; btn.textContent = 'Cancel Booking'; }
 }
 
-/* ── AI RECOMMEND ── */
 function quickRec(text) {
   document.getElementById('pref-input').value = text;
   getRecommendation();
 }
 
 function clearRec() {
-  document.getElementById('pref-input').value='';
-  document.getElementById('rec-results').style.display='none';
-  document.getElementById('rec-empty').style.display='none';
-  document.getElementById('rec-error').className='msg error';
+  document.getElementById('pref-input').value = '';
+  document.getElementById('rec-results').style.display = 'none';
+  document.getElementById('rec-error').className = 'msg';
 }
 
 async function getRecommendation() {
   const prefs = document.getElementById('pref-input').value.trim();
   if (!prefs) return;
-
-  document.getElementById('rec-results').style.display='none';
-  document.getElementById('rec-empty').style.display='none';
-  document.getElementById('rec-error').className='msg error';
-  document.getElementById('rec-loading').style.display='block';
-
+  document.getElementById('rec-results').style.display = 'none';
+  document.getElementById('rec-error').className = 'msg';
+  document.getElementById('rec-loading').style.display = 'block';
   try {
     if (!allTrips.length) {
-      const [tripsRes, destsRes] = await Promise.all([fetch(`${API}/trips/`), fetch(`${API}/destinations/`)]);
-      allTrips = await tripsRes.json();
-      const dests = await destsRes.json();
-      dests.forEach(d => tripsMap[d.id] = d);
+      const r1 = await fetch(API + '/trips/');
+      const r2 = await fetch(API + '/destinations/');
+      allTrips = await r1.json();
+      const dests = await r2.json();
+      dests.forEach(function(d) { tripsMap[d.id] = d; });
       populateTripSelect(allTrips);
     }
-
-    const res = await fetch(`${API}/ai/recommend`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({preferences:prefs})});
+    const res = await fetch(API + '/ai/recommend', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({preferences:prefs})});
     const data = await res.json();
-    document.getElementById('rec-loading').style.display='none';
-
-    if (!res.ok) { showMsg(document.getElementById('rec-error'),'Could not get recommendation. Please try again.','error'); return; }
-
+    document.getElementById('rec-loading').style.display = 'none';
+    if (!res.ok) { showMsg(document.getElementById('rec-error'), 'Could not get recommendation.', 'error'); return; }
     document.getElementById('rec-text').textContent = data.recommendation;
-
-    const recGrid = document.getElementById('rec-trips-grid');
-    if (allTrips.length) {
-      recGrid.innerHTML = allTrips.map(t => tripCardHTML(t, true)).join('');
-    } else {
-      recGrid.innerHTML = '';
-    }
-
-    document.getElementById('rec-results').style.display='block';
-    document.getElementById('rec-results').scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('rec-trips-grid').innerHTML = allTrips.map(function(t) { return tripCardHTML(t, true); }).join('');
+    document.getElementById('rec-results').style.display = 'block';
   } catch(e) {
-    document.getElementById('rec-loading').style.display='none';
-    showMsg(document.getElementById('rec-error'),'Network error. Make sure the API is running.','error');
+    document.getElementById('rec-loading').style.display = 'none';
+    showMsg(document.getElementById('rec-error'), 'Network error. Make sure the API is running.', 'error');
   }
 }
 
-/* ── CHAT ── */
 function toggleChat() {
   document.getElementById('chat-window').classList.toggle('open');
 }
@@ -521,23 +492,25 @@ async function startChat() {
   const email = document.getElementById('chat-email-input').value.trim();
   if (!email) return;
   try {
-    let userRes = await fetch(`${API}/users/`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:email.split('@')[0],email})});
+    let userRes = await fetch(API + '/users/', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name:email.split('@')[0], email:email})});
     let user;
-    if (userRes.status===400) { const all=await fetch(`${API}/users/`).then(r=>r.json()); user=all.find(u=>u.email===email); }
-    else { user=await userRes.json(); }
+    if (userRes.status === 400) {
+      const all = await fetch(API + '/users/').then(function(r) { return r.json(); });
+      user = all.find(function(u) { return u.email === email; });
+    } else { user = await userRes.json(); }
     if (!user) return;
     chatUserId = user.id;
-    document.getElementById('chat-email-prompt').style.display='none';
-    document.getElementById('chat-messages').style.display='flex';
-    document.getElementById('chat-input-area').style.display='flex';
-    addChatMsg('bot','Hi! I am your AI Travel Assistant. Ask me anything — packing tips, destination info, best time to visit, or help choosing a trip!');
-  } catch(e) { console.log(e); }
+    document.getElementById('chat-email-prompt').style.display = 'none';
+    document.getElementById('chat-messages').style.display = 'flex';
+    document.getElementById('chat-input-area').style.display = 'flex';
+    addChatMsg('bot', 'Hi! I am your AI Travel Assistant. Ask me anything about destinations, packing tips, best times to visit, or help choosing a trip!');
+  } catch(e) {}
 }
 
 function addChatMsg(role, text) {
   const msgs = document.getElementById('chat-messages');
   const div = document.createElement('div');
-  div.className = `chat-msg ${role}`;
+  div.className = 'chat-msg ' + role;
   div.textContent = text;
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
@@ -548,18 +521,18 @@ async function sendChat() {
   const input = document.getElementById('chat-input');
   const message = input.value.trim();
   if (!message || !chatUserId) return;
-  input.value='';
+  input.value = '';
   addChatMsg('user', message);
-  const typing = addChatMsg('bot typing','AI is typing...');
+  const typing = addChatMsg('bot typing', 'AI is typing...');
   try {
-    const res = await fetch(`${API}/ai/chat`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user_id:chatUserId,message})});
+    const res = await fetch(API + '/ai/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({user_id:chatUserId, message:message})});
     const data = await res.json();
     typing.remove();
-    addChatMsg('bot', data.reply||'Sorry, I could not get a response.');
-  } catch(e) { typing.remove(); addChatMsg('bot','Network error. Please try again.'); }
+    addChatMsg('bot', data.reply || 'Sorry, I could not get a response.');
+  } catch(e) { typing.remove(); addChatMsg('bot', 'Network error. Please try again.'); }
 }
 
-function showMsg(el, text, type) { el.textContent=text; el.className=`msg ${type}`; }
+function showMsg(el, text, type) { el.textContent = text; el.className = 'msg ' + type; }
 
 loadTrips();
 </script>
