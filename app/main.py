@@ -29,3 +29,32 @@ def seed_data():
                 price_per_person=850, total_seats=20),
             models.Trip(title="Tokyo Explorer", destination_id=tokyo.id,
                 start_date=now+timedelta(days=130), end_date=now+timedelta(days=137),
+                price_per_person=1500, total_seats=18),
+        ])
+        db.commit()
+    finally:
+        db.close()
+
+
+seed_data()
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(users.router)
+app.include_router(destinations.router)
+app.include_router(trips.router)
+app.include_router(bookings.router)
+app.include_router(ai.router)
+
+
+@app.get("/")
+def root():
+    return {"message": "Travel Agency API is alive"}
